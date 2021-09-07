@@ -1,0 +1,17 @@
+<%= form_for recipe do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %> <br><br>
+
+  <p>Ingredients</p>
+
+  <%= f.fields_for :ingredients do |addr| %>
+    <%= addr.label :name %>
+    <%= addr.text_field :name %>
+
+    <%= addr.label :quantity %>
+    <%= addr.text_field :quantity %><br>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
